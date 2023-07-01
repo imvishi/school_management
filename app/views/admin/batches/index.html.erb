@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Batches</h1>
+
+<div id="batches">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collection.each do |batch| %>
+        <tr>
+          <td><%= link_to batch.name, edit_admin_school_batch_path(@school, batch), { class: "btn-success"} %> </td>
+          <td><%= batch.school_course.course.name %></td>
+          <td><%= batch.active %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New batch", new_admin_school_batch_path(@school) %>

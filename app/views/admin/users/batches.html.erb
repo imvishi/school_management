@@ -1,0 +1,20 @@
+<h1>User Batches</h1>
+
+<div id="batches">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @batches.each do |batch| %>
+        <tr>
+          <td><%= batch.batch.name %></td>
+          <td><%= batch.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

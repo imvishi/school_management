@@ -1,0 +1,14 @@
+<h1>Select Current User</h1>
+
+<div class="container-fluid">
+  <%= form_with url: select_user_admin_users_path do |f| %>
+    <div class="row">
+      <div class="form-group">
+        <%= f.label :User %><span class="required">*</span><br />
+        <%= f.select :user_id, User.active.map { |user| [user.name, user.id] } %>
+      </div>
+    </div>
+
+    <%= f.submit %>
+  <% end %>
+</div>

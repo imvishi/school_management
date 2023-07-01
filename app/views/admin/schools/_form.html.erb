@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="form-group">
+    <%= f.label :name %><span class="required">*</span><br />
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <%= f.label :slug %><span class="required">*</span><br />
+    <%= f.text_field :slug, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <%= f.label :active %><br />
+    <%= f.check_box :active, { checked: @resource.active }, '1', '0' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <%= f.label :courses %><br />
+    <%= f.collection_select(:enabled_course_ids, Course.active, :id, :name,{}, {:multiple => true}) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <%= f.label :school_admin %><br />
+    <%= f.collection_select(:enabled_user_ids, User.active, :id, :name,{}, {:multiple => true}) %>
+  </div>
+</div>
+
+<%= f.submit %>

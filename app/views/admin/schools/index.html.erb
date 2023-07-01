@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>School</h1>
+
+<div id="schools">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Slug</th>
+        <th>Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collection.each do |school| %>
+        <tr>
+          <td><%= link_to school.name, edit_admin_school_path(school), { class: "btn-success"} %> </td>
+          <td><%= school.slug %></td>
+          <td><%= school.active %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New school", new_admin_school_path %>

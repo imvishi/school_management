@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="form-group">
+    <%= f.label :name %><span class="required">*</span><br />
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <%= f.label :slug %><span class="required">*</span><br />
+    <%= f.text_field :slug, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <%= f.label :active %><br />
+    <%= f.check_box :active, { checked: @resource.active }, '1', '0' %>
+  </div>
+</div>
+
+<%= f.submit %>

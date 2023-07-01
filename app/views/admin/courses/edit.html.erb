@@ -1,0 +1,19 @@
+<h1>Edit </h1>
+
+<% if @resource.errors.any? %>
+  <div style="color: red">
+    <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+    <ul>
+      <% @resource.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container-fluid">
+  <%= form_with url: admin_course_path, model: @resource do |f| %>
+    <%= render partial: 'form', locals: { f: f } %><br>
+  <% end %>
+</div>

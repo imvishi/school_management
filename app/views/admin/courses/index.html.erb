@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Courses</h1>
+
+<div id="course">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Slug</th>
+        <th>Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collection.each do |course| %>
+        <tr>
+          <td><%= link_to course.name, edit_admin_course_path(course), { class: "btn-success"} %> </td>
+          <td><%= course.slug %></td>
+          <td><%= course.active %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New course", new_admin_course_path %>

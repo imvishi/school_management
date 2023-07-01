@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <h1> Request for batch</h1>
+  <%= form_with url: request_batch_admin_user_url(@current_user) do |f| %>
+    <div class="form-group">
+      <%= f.label :batches %><br />
+      <%= f.collection_select(:batch_ids, @batches, :id, :name,{}, {:multiple => true}) %>
+    </div>
+  <%= f.submit 'Request Batch' %>
+  <% end %>
+</div>
